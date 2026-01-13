@@ -29,6 +29,7 @@ body {
 h1, h2, h3 {
     font-family: 'Fredoka', sans-serif;
 }
+
 /* Navigation */
 nav {
     background: var(--white);
@@ -36,7 +37,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .nav-container {
@@ -44,70 +45,77 @@ nav {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    position: relative;
+    gap: 15px;
 }
 
 .logo {
+    width: 60px;
+    height: auto;
+}
+
+.brand-name {
     font-family: 'Fredoka', sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--primary-blue);
+    flex: 1;
     text-align: center;
 }
 
 .logo-tagline {
-    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    font-size: 13px;
     color: #6B7280;
-    font-weight: 500;
-    text-align: center;
+    white-space: nowrap;
 }
 
 .nav-cta {
     background: var(--accent-orange);
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     white-space: nowrap;
 }
 
 .nav-cta:hover {
     background: #ea580c;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
 }
 
-/* Desktop layout */
-@media (min-width: 769px) {
+/* Mobile */
+@media (max-width: 768px) {
     .nav-container {
-        min-height: 80px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .logo {
-        font-size: 36px;
+        width: 50px;
+    }
+    
+    .brand-name {
+        font-size: 20px;
+        flex: none;
     }
     
     .logo-tagline {
-        font-size: 16px;
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
     }
     
     .nav-cta {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    
-    .nav-cta:hover {
-        transform: translateY(calc(-50% - 2px));
+        width: 100%;
+        text-align: center;
+        justify-content: center;
     }
 }
 
