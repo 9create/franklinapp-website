@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --blue: #1E3A8A;
+  --orange: #F97316;
+  --dark: #111827;
+  --gray: #6B7280;
+  --line: #EAEAEA;
+  --bg: #FAFAFA;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: var(--dark); background: #FFFFFF; font-weight: 400; line-height: 1.6; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+a { text-decoration: none; color: inherit; }
+
+/* ---- Navbar (UPDATED) ---- */
+nav { 
+  padding: 24px 0; 
+  max-width: 880px; 
+  margin: 0 auto; 
+  position: relative;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative; /* Hamburger ke absolute position ke liye */
+}
+.brand { 
+  font-family: 'Fredoka', sans-serif; 
+  font-weight: 600; 
+  font-size: 20px; /* ✅ Text ko thoda bada kiya */
+  color: var(--blue); 
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+.brand img {
+  height: 28px; /* ✅ Logo ko thoda chhota kiya */
+  width: auto;
+}
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-cta { border: 1px solid var(--dark); border-radius: 20px; padding: 8px 18px; font-size: 13px; font-weight: 500; }
+
+/* ---- Hamburger Styles (UPDATED - Right Corner Fix) ---- */
+.hamburger { 
+  display: none; 
+  cursor: pointer; 
+  flex-direction: column; 
+  gap: 5px; 
+  /* ✅ 100% RIGHT CORNER FIX */
+  position: absolute; 
+  right: 20px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  z-index: 10;
+}
+.bar { width: 25px; height: 3px; background-color: var(--dark); border-radius: 2px; transition: 0.3s; }
+
+/* ---- Hero ---- */
+.hero { text-align: center; padding: 90px 24px 70px; }
+.hero .eyebrow { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 20px; }
+.hero h1 { font-size: 42px; font-weight: 500; letter-spacing: -0.5px; line-height: 1.25; max-width: 620px; margin: 0 auto 18px; color: var(--dark); }
+.hero p.sub { font-size: 16px; color: var(--gray); max-width: 480px; margin: 0 auto 34px; font-weight: 300; }
+.cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn { padding: 13px 26px; border-radius: 8px; font-size: 14px; font-weight: 500; }
+.btn-primary { background: var(--orange); color: white; }
+.btn-ghost { border: 1px solid var(--line); color: var(--dark); }
+
+.stats { display: flex; justify-content: center; gap: 44px; margin-top: 56px; flex-wrap: wrap; }
+.stats div { text-align: center; }
+.stats .num { font-size: 22px; font-weight: 600; color: var(--dark); }
+.stats .label { font-size: 12.5px; color: var(--gray); margin-top: 2px; }
+
+/* ---- Section shell ---- */
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+.section-head { text-align: center; max-width: 520px; margin: 0 auto 48px; }
+.section-head .eyebrow { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; font-weight: 600; }
+.section-head h2 { font-size: 28px; font-weight: 500; color: var(--dark); margin-bottom: 10px; }
+.section-head p { color: var(--gray); font-size: 14.5px; font-weight: 300; }
+
+/* ---- Track cards ---- */
+.track-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.track-card { background: white; padding: 40px 32px; }
+.track-card .tag { font-size: 11.5px; font-weight: 600; letter-spacing: 1px; color: var(--gray); margin-bottom: 14px; }
+.track-card h3 { font-size: 20px; font-weight: 500; margin-bottom: 6px; }
+.track-card .quote { font-size: 13.5px; color: var(--gray); font-style: italic; margin-bottom: 22px; }
+.track-card ul { list-style: none; margin-bottom: 26px; }
+.track-card li { font-size: 13.5px; color: #444; margin-bottom: 10px; padding-left: 16px; position: relative; font-weight: 300; }
+.track-card li::before { content: "–"; position: absolute; left: 0; color: var(--gray); }
+.track-status { font-size: 13px; font-weight: 500; }
+.track-status.active { color: var(--blue); }
+.track-status.soon { color: var(--orange); }
+
+/* ---- Simple list section ---- */
+.plain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.plain-item .num { font-size: 13px; color: var(--orange); font-weight: 600; margin-bottom: 10px; }
+.plain-item h3 { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
+.plain-item p { font-size: 13.5px; color: var(--gray); font-weight: 300; line-height: 1.65; }
+
+/* ---- Program ---- */
+.program { max-width: 560px; margin: 0 auto; text-align: center; }
+.program h3 { font-size: 22px; font-weight: 500; margin-bottom: 8px; }
+.program .sub2 { color: var(--gray); font-size: 14px; margin-bottom: 30px; font-weight: 300; }
+.program-list { list-style: none; text-align: left; max-width: 340px; margin: 0 auto 34px; }
+.program-list li { font-size: 14px; margin-bottom: 12px; padding-left: 18px; position: relative; font-weight: 300; }
+.program-list li::before { content: "–"; position: absolute; left: 0; color: var(--gray); }
+.seat-note { margin-top: 24px; font-size: 13px; color: #444; font-weight: 300; padding-left: 18px; text-align: left; }
+
+/* ---- Instructor ---- */
+.instructor { display: flex; gap: 32px; align-items: flex-start; max-width: 620px; margin: 0 auto; padding: 0 20px; }
+.instructor .avatar { width: 84px; height: 84px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); flex-shrink: 0; overflow: hidden; }
+.instructor .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.instructor h3 { font-size: 18px; font-weight: 500; margin-bottom: 2px; }
+.instructor .role { color: var(--orange); font-size: 12.5px; font-weight: 600; margin-bottom: 16px; }
+.instructor p { font-size: 13.5px; color: #444; font-weight: 300; margin-bottom: 10px; line-height: 1.7; }
+
+/* ---- FAQ ---- */
+.faq { max-width: 620px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 22px 0; }
+.faq-item h3 { font-size: 15px; font-weight: 500; margin-bottom: 8px; }
+.faq-item p { font-size: 13.5px; color: var(--gray); font-weight: 300; line-height: 1.7; }
+
+/* ---- Contact ---- */
+.contact { text-align: center; }
+.contact-grid { display: flex; justify-content: center; gap: 48px; margin: 36px 0 40px; flex-wrap: wrap; }
+.contact-item .label { font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 6px; }
+.contact-item a, .contact-item div.val { font-size: 15px; font-weight: 500; }
+.map-frame { max-width: 620px; margin: 0 auto 40px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+.map-frame iframe { width: 100%; height: 260px; border: 0; display: block; filter: grayscale(20%); }
+
+footer { text-align: center; padding: 50px 24px; border-top: 1px solid var(--line); }
+footer .fbrand { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--blue); margin-bottom: 6px; }
+footer p { font-size: 13px; color: var(--gray); font-weight: 300; margin-bottom: 4px; }
+footer .credit { color: var(--orange); font-weight: 500; margin-top: 10px; }
+footer .legal { margin-top: 16px; display: flex; gap: 18px; justify-content: center; font-size: 12.5px; }
+footer .legal a { color: var(--gray); }
+
+/* ---- Mobile Responsive ---- */
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .hero h1 { font-size: 30px; }
+  .track-grid { grid-template-columns: 1fr; }
+  .plain-grid { grid-template-columns: 1fr; }
+  .instructor { flex-direction: column; align-items: center; text-align: center; padding: 0 15px; }
+  
+  /* Hamburger Menu Active */
+  .hamburger { display: flex; }
+  .nav-links {
+      position: absolute;
+      top: 75px;
+      left: 0;
+      right: 0;
+      background-color: #FFFFFF;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: none;
+      z-index: 99;
+      border-bottom: 1px solid var(--line);
+  }
+  .nav-links.active { display: flex; }
+}
+/* ---- Floating WhatsApp Button ---- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366; /* WhatsApp Green */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+}
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+    fill: #FFF;
+}
